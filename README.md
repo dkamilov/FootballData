@@ -1,2 +1,2 @@
-# FootballData
-Football competitions and matches.
+
+Football competitions and matches from https://www.football-data.org/.
