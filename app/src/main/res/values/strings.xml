@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyScore</string>
+
+    <string name="competitions">Competitions</string>
+    <string name="matches">Matches</string>
+    <string name="favorite">Favorites</string>
+    <string name="account">Account</string>
+    <string name="matchday">Matchday</string>
+    <string name="statistics">Statistics</string>
+    <string name="info">Info</string>
+
+    <string name="formatted_match_score">%1$s - %2$s</string>
+    <string name="formatted_matchday">Matchday: %1$d</string>
+
+    <string name="error_http">Couldn\'t load data. Try later</string>
+    <string name="error_network">Couldn\'t load data. Check your internet connection</string>
+</resources>

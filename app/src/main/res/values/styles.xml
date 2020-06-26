@@ -1,0 +1,37 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_raisin_black</item>
+        <item name="colorPrimaryDark">@color/color_raisin_black</item>
+        <item name="colorAccent">@color/color_vivid_cerulean</item>
+        <item name="colorOnPrimary">@color/color_white</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarMenu" parent="ThemeOverlay.MaterialComponents.Dark">
+        <item name="backgroundColor">?attr/colorAccent</item>
+    </style>
+
+    <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+    
+    <style name="TextCountryOverline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextCompetitionHeadline" parent="TextAppearance.MaterialComponents.Headline5">
+    </style>
+
+    <style name="TextMatchStatusOverline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="android:background">@color/color_tuna</item>
+    </style>
+    
+    <style name="TextMatchScore" parent="TextAppearance.MaterialComponents.Body1">
+    </style>
+
+</resources>

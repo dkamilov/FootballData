@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_raisin_black">#1E2024</color>
+    <color name="color_shark">#21282D</color>
+    <color name="color_tuna">#303B42</color>
+    <color name="color_weldon_blue">#7C95AA</color>
+    <color name="color_vivid_cerulean">#03A9F4</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_in_play">#34FF10</color>
+    <color name="color_postponed">#B31D1D</color>
+</resources>

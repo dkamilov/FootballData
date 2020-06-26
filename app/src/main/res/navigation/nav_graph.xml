@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/competitionsFragment">
+
+    <fragment
+        android:id="@+id/competitionsFragment"
+        android:name="com.damir.android.myscore.ui.competitions.presentation.CompetitionsFragment"
+        android:label="@string/competitions"
+        tools:layout="@layout/fragment_competitions">
+        <action
+            android:id="@+id/action_competitionsFragment_to_competitionMatchesFragment"
+            app:destination="@id/competitionMatchesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesFragment"
+        android:name="com.damir.android.myscore.ui.matches.MatchesFragment"
+        android:label="@string/matches"
+        tools:layout="@layout/fragment_matches"/>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.damir.android.myscore.ui.favorites.FavoritesFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favorites"/>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.damir.android.myscore.ui.account.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_account"/>
+    <fragment
+        android:id="@+id/competitionMatchesFragment"
+        android:name="com.damir.android.myscore.ui.competitions.presentation.CompetitionMatchesFragment"
+        android:label="CompetitionMatchesFragment"
+        tools:layout="@layout/fragment_competition_matches">
+        <argument
+            android:name="competitionId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="matchday"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="competition"
+            app:argType="string"
+            android:defaultValue="League" />
+    </fragment>
+</navigation>
