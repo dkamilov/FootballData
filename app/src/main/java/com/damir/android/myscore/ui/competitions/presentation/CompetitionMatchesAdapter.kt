@@ -89,8 +89,8 @@ class CompetitionMatchViewHolder(
             else -> {
                 val text = itemView.context.getString(
                     R.string.formatted_match_score,
-                    match.homeTeamScore.toString(),
-                    match.awayTeamScore.toString())
+                    match.homeTeamScore,
+                    match.awayTeamScore)
                 updateMatchScoreText(text)
             }
         }

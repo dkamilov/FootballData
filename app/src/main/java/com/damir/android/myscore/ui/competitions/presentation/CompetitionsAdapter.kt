@@ -56,7 +56,7 @@ class CompetitionViewHolder(
         itemView.setOnClickListener {
             onCompetitionItemClicked(
                 competition.id,
-                competition.currentSeason.currentMatchday,
+                competition.season.currentMatchday,
                 competition.name
             )
         }

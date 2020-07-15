@@ -1,6 +1,7 @@
 package com.damir.android.myscore.utils
 
 
+const val TAG = "MyScoreApp"
 object Constants {
     //Country flags
     const val FLAG_BRAZIL = "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"

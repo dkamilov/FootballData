@@ -2,7 +2,7 @@ package com.damir.android.myscore.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CurrentSeason(
+data class Season(
     @SerializedName( "id")
     val id: Int,
     @SerializedName("startDate")
@@ -10,5 +10,7 @@ data class CurrentSeason(
     @SerializedName("endDate")
     val endDate: String,
     @SerializedName("currentMatchday")
-    val currentMatchday: Int
+    val currentMatchday: Int,
+    @SerializedName("winner")
+    val winner: Winner?
 )

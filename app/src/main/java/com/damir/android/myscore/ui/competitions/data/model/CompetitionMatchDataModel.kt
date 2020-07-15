@@ -23,8 +23,6 @@ data class CompetitionMatchDataModel(
 
     @SerializedName("awayTeam")
     val awayTeam: Team
-
-
 )
 
 fun CompetitionMatchDataModel.toDomainModel(): CompetitionMatchDomainModel {

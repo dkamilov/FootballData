@@ -9,6 +9,6 @@ abstract class BaseViewModel : ViewModel() {
 
     protected val _dataLoading = MutableLiveData<Boolean>()
     val dataLoading: LiveData<Boolean> = _dataLoading
-    protected val _errorMessage = MutableLiveData<Result.Error>()
-    val errorMessage: LiveData<Result.Error> = _errorMessage
+    protected val _errorMessage = MutableLiveData<Result.Error?>()
+    val errorMessage: LiveData<Result.Error?> = _errorMessage
 }

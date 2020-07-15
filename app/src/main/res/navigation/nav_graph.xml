@@ -46,5 +46,21 @@
             android:name="competition"
             app:argType="string"
             android:defaultValue="League" />
+        <action
+            android:id="@+id/action_competitionMatchesFragment_to_competitionStatisticsFragment"
+            app:destination="@id/competitionStatistics" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionStatistics"
+        android:name="com.damir.android.myscore.ui.competitions.presentation.CompetitionStatisticsFragment"
+        android:label="CompetitionStatistics"
+        tools:layout="@layout/fragment_competition_statistics">
+        <argument
+            android:name="competitionId"
+            app:argType="integer" />
+        <argument
+            android:name="competitionName"
+            app:argType="string"
+            android:defaultValue="League" />
     </fragment>
 </navigation>

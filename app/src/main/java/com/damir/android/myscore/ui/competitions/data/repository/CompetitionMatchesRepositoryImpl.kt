@@ -1,13 +1,12 @@
 package com.damir.android.myscore.ui.competitions.data.repository
 
-import android.util.Log
 import com.damir.android.myscore.Result
+import com.damir.android.myscore.safeResult
 import com.damir.android.myscore.ui.competitions.data.model.toDomainModel
 import com.damir.android.myscore.ui.competitions.data.retrofit.CompetitionMatchesService
+import com.damir.android.myscore.ui.competitions.domain.model.CompetitionInfoDomainModel
 import com.damir.android.myscore.ui.competitions.domain.model.CompetitionMatchDomainModel
 import com.damir.android.myscore.ui.competitions.domain.repository.CompetitionMatchesRepository
-import retrofit2.HttpException
-import java.lang.Exception
 
 class CompetitionMatchesRepositoryImpl(
     private val competitionMatchesService: CompetitionMatchesService
@@ -15,20 +14,23 @@ class CompetitionMatchesRepositoryImpl(
 
     override suspend fun getCompetitionMatches(competitionId: Int, matchday: Int)
             : Result<List<CompetitionMatchDomainModel>> {
-        return try {
-            val matches = competitionMatchesService
+        return safeResult {
+            competitionMatchesService
                 .getCompetitionMatches(competitionId, matchday)
                 .matches
                 .map {
                     it.toDomainModel()
                 }
-            Result.Success(matches)
-        } catch (e: HttpException) {
-            Log.e("MyScoreApp", "getAllCompetitions: ${e.message}")
-            Result.Error.HttpError(e)
-        } catch (e: Exception) {
-            Log.e("MyScoreApp", "getAllCompetitions: ${e.message}")
-            Result.Error.NetworkError(e)
         }
     }
+
+    override suspend fun getCompetitionInfo(competitionId: Int)
+            : Result<CompetitionInfoDomainModel> {
+        return safeResult {
+            competitionMatchesService
+                .getCompetitionInfo(competitionId)
+                .toDomainModel()
+        }
+    }
+
 }

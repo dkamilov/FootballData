@@ -1,6 +1,8 @@
 package com.damir.android.myscore.di
 
 import com.damir.android.myscore.ui.competitions.data.retrofit.CompetitionMatchesService
+import com.damir.android.myscore.ui.competitions.data.retrofit.CompetitionScorersService
+import com.damir.android.myscore.ui.competitions.data.retrofit.CompetitionStandingsService
 import com.damir.android.myscore.ui.competitions.data.retrofit.CompetitionsService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -17,6 +19,8 @@ val networkModule = module {
     single { retrofit(get()) }
     single { competitionsService(get()) }
     single { competitionMatchesService(get()) }
+    single { competitionStandingsService(get()) }
+    single { competitionScorersService(get()) }
 }
 
 private fun okHttpClient() : OkHttpClient {
@@ -38,6 +42,12 @@ private fun competitionsService(retrofit: Retrofit) : CompetitionsService =
 
 private fun competitionMatchesService(retrofit: Retrofit): CompetitionMatchesService =
     retrofit.create(CompetitionMatchesService::class.java)
+
+private fun competitionStandingsService(retrofit: Retrofit): CompetitionStandingsService =
+    retrofit.create(CompetitionStandingsService::class.java)
+
+private fun competitionScorersService(retrofit: Retrofit): CompetitionScorersService =
+    retrofit.create(CompetitionScorersService::class.java)
 
 private val interceptor = object: Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {

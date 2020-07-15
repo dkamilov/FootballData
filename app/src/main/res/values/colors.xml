@@ -8,4 +8,5 @@
     <color name="color_white">#FFFFFF</color>
     <color name="color_in_play">#34FF10</color>
     <color name="color_postponed">#B31D1D</color>
+    <color name="color_gold">#FFD700</color>
 </resources>

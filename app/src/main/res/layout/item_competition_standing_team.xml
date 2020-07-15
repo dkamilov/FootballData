@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="1dp"
+    android:layout_marginBottom="1dp"
+    android:background="@color/color_shark">
+
+    <TextView
+        android:id="@+id/textTeamPosition"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="10"
+        style="@style/TextStandingTeamItem"/>
+
+    <ImageView
+        android:id="@+id/imgTeamLogo"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textTeamPosition"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textTeamName"
+        style="@style/TextStandingTeamItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/imgTeamLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Manchester United FC" />
+
+    <TextView
+        android:id="@+id/textPlayedGames"
+        style="@style/TextStandingTeamItem"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textGoals"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textTeamName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="99" />
+
+    <TextView
+        android:id="@+id/textGoals"
+        style="@style/TextStandingTeamItem"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textGoalsDifference"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textPlayedGames"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="530:560" />
+
+    <TextView
+        android:id="@+id/textGoalsDifference"
+        style="@style/TextStandingTeamItem"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textPoints"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textGoals"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="320" />
+
+    <TextView
+        android:id="@+id/textPoints"
+        style="@style/TextStandingTeamItem"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textGoalsDifference"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="580" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

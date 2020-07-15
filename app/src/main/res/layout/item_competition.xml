@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="@id/imgCountryFlag"
         app:layout_constraintStart_toEndOf="@id/imgCountryFlag"
         tools:text="Spain"
-        style="@style/TextCountryOverline"/>
+        style="@style/TextOverline12"/>
 
     <TextView
         android:id="@+id/textCompetitionName"

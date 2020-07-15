@@ -35,5 +35,6 @@ class CompetitionsViewModel(
 
     private fun handleErrorState(error: Result.Error) {
         allCompetitions.value = emptyList()
+        _errorMessage.value = error
     }
 }

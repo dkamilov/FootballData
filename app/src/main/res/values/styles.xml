@@ -4,7 +4,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/color_raisin_black</item>
         <item name="colorPrimaryDark">@color/color_raisin_black</item>
+        <item name="colorSecondary">@color/color_vivid_cerulean</item>
         <item name="colorAccent">@color/color_vivid_cerulean</item>
+        <item name="colorSurface">@color/color_raisin_black</item>
         <item name="colorOnPrimary">@color/color_white</item>
     </style>
 
@@ -13,14 +15,19 @@
     </style>
 
     <style name="ToolbarMenu" parent="ThemeOverlay.MaterialComponents.Dark">
-        <item name="backgroundColor">?attr/colorAccent</item>
+        <item name="android:colorBackground">?attr/colorPrimary</item>
     </style>
 
     <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
         <item name="labelVisibilityMode">labeled</item>
+        <item name="itemBackground">?attr/colorPrimary</item>
     </style>
     
-    <style name="TextCountryOverline" parent="TextAppearance.MaterialComponents.Overline">
+    <style name="DialogCompetitionInfo">
+        <item name="colorSecondary">?attr/colorSecondary</item>
+    </style>
+    
+    <style name="TextOverline12" parent="TextAppearance.MaterialComponents.Overline">
         <item name="android:textSize">12sp</item>
     </style>
 
@@ -32,6 +39,13 @@
     </style>
     
     <style name="TextMatchScore" parent="TextAppearance.MaterialComponents.Body1">
+    </style>
+
+    <style name="TextStandingTeamItem">
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
     </style>
 
 </resources>

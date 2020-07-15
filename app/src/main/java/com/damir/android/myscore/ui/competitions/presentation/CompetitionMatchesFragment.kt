@@ -1,28 +1,24 @@
 package com.damir.android.myscore.ui.competitions.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.damir.android.myscore.R
 import com.damir.android.myscore.databinding.FragmentCompetitionMatchesBinding
 import com.damir.android.myscore.ui.competitions.domain.model.CompetitionMatchDomainModel
-import com.damir.android.myscore.utils.Constants
-import com.damir.android.myscore.utils.extensions.loadSvg
 import com.damir.android.myscore.utils.view.BaseFragment
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class CompetitionMatchesFragment : BaseFragment<FragmentCompetitionMatchesBinding>() {
 
-    private lateinit var competitionMatchesAdapter: CompetitionMatchesAdapter
+    private var competitionMatchesAdapter: CompetitionMatchesAdapter? = null
     private val args: CompetitionMatchesFragmentArgs by navArgs()
-    private val competitionMatchesViewModel: CompetitionMatchesViewModel by viewModel()
+    private val competitionMatchesViewModel: CompetitionMatchesViewModel by sharedViewModel()
 
     override fun setBinding(
         inflater: LayoutInflater,
@@ -53,6 +49,11 @@ class CompetitionMatchesFragment : BaseFragment<FragmentCompetitionMatchesBindin
         })
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        competitionMatchesAdapter = null
+    }
+
     private fun setupToolbar() {
         binding.toolbar.title = args.competition
         binding.toolbar.subtitle = getString(R.string.formatted_matchday, args.matchday)
@@ -61,10 +62,18 @@ class CompetitionMatchesFragment : BaseFragment<FragmentCompetitionMatchesBindin
         }
         binding.toolbar.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId) {
-                //TODO: Create menu actions
-                R.id.menu_statistics -> {true}
-                R.id.menu_info -> {true}
-                R.id.menu_matchday -> {true}
+                R.id.menu_statistics -> {
+                    navigateToStatistics()
+                    true
+                }
+                R.id.menu_info -> {
+                    showDialogInfo()
+                    true
+                }
+                //TODO: create matchday chooser
+                R.id.menu_matchday -> {
+                    true
+                }
                 else -> false
             }
         }
@@ -82,11 +91,23 @@ class CompetitionMatchesFragment : BaseFragment<FragmentCompetitionMatchesBindin
     }
 
     private fun updateMatches(matches: List<CompetitionMatchDomainModel>) {
-        competitionMatchesAdapter.updateMatches(matches)
+        competitionMatchesAdapter?.updateMatches(matches)
     }
 
     private fun showProgress(isLoading: Boolean) {
         binding.progressBar.isVisible = isLoading
         binding.recyclerCompetitionMatches.isVisible = !isLoading
+    }
+
+    private fun navigateToStatistics() {
+        val action = CompetitionMatchesFragmentDirections.actionCompetitionMatchesFragmentToCompetitionStatisticsFragment(
+                args.competitionId,
+                args.competition)
+        findNavController().navigate(action)
+    }
+
+    private fun showDialogInfo() {
+        val infoDialog = CompetitionMatchesInfoDialog()
+        infoDialog.show(childFragmentManager, "info")
     }
 }

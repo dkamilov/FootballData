@@ -28,7 +28,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         container: ViewGroup?
     ): T
 
-    protected fun showErrorMessage(error: Result.Error) {
+    protected fun showErrorMessage(error: Result.Error?) {
         when(error) {
             is Result.Error.HttpError -> { showSnackbar(R.string.error_http) }
             is Result.Error.NetworkError -> { showSnackbar(R.string.error_network) }
